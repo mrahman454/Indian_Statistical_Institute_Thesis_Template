@@ -15,6 +15,7 @@ LINK=
 DIR=$(shell pwd)
 VIEWER=$(shell which xdg-open open | head -n 1)
 AUX=$(shell find . -name '*.aux')
+DSstore=$(shell find . -name '*.DS_Store')
 
 all: symlinks pdf
 
@@ -54,9 +55,10 @@ fast-build:
 	$(FASTCC) $(PAPER) && $(FASTCC) $(PAPER)
 	
 clean:
-	rm -f *~ *.aux *.bbl *.blg *.dvi *.idx *.ilg *.ind *.loa *.lof *.log *.lot *.mtc *.mtc{0,1,2,3} *.maf .DS_Store
+	rm -f *~ *.aux *.bbl *.blg *.dvi *.idx *.ilg *.ind *.loa *.lof *.log *.lot *.mtc *.mtc{0,1,2,3} *.maf 
 	rm -f *.nlo *.out *.thm *.toc texput.log x.log *.bak *.ps *.fdb_latexmk *.fls
 	rm -f $(AUX)
+	rm -f $(DSstore)
 
 veryclean:
 	rm -f *.pdf
