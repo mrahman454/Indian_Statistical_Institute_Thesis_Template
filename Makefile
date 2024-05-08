@@ -14,6 +14,7 @@ ORIGIN=master
 LINK=
 DIR=$(shell pwd)
 VIEWER=$(shell which xdg-open open | head -n 1)
+AUX=$(shell find . -name '*.aux')
 
 all: symlinks pdf
 
@@ -55,6 +56,7 @@ fast-build:
 clean:
 	rm -f *~ *.aux *.bbl *.blg *.dvi *.idx *.ilg *.ind *.loa *.lof *.log *.lot *.mtc *.mtc{0,1,2,3} *.maf
 	rm -f *.nlo *.out *.thm *.toc texput.log x.log *.bak *.ps *.fdb_latexmk *.fls
+	rm -f $(AUX)
 
 veryclean:
 	rm -f *.pdf
