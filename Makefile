@@ -53,7 +53,7 @@ fast-build:
 	$(FASTCC) $(PAPER) && $(FASTCC) $(PAPER)
 	
 clean:
-	rm -f *~ *.aux *.bbl *.blg *.dvi *.idx *.ilg *.ind *.loa *.lof *.log *.lot *.mtc
+	rm -f *~ *.aux *.bbl *.blg *.dvi *.idx *.ilg *.ind *.loa *.lof *.log *.lot *.mtc *.mtc{0,1,2,3} *.maf
 	rm -f *.nlo *.out *.thm *.toc texput.log x.log *.bak *.ps *.fdb_latexmk *.fls
 
 veryclean:
